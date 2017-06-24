@@ -1,0 +1,9 @@
+c:\users\lixin\documents\visual studio 2015\Projects\Sudoku\bin\Debug\Sudoku.exe.config
+c:\users\lixin\documents\visual studio 2015\Projects\Sudoku\bin\Debug\Sudoku.exe
+c:\users\lixin\documents\visual studio 2015\Projects\Sudoku\bin\Debug\Sudoku.pdb
+c:\users\lixin\documents\visual studio 2015\Projects\Sudoku\obj\Debug\Sudoku.csprojResolveAssemblyReference.cache
+c:\users\lixin\documents\visual studio 2015\Projects\Sudoku\obj\Debug\Sudoku.Form1.resources
+c:\users\lixin\documents\visual studio 2015\Projects\Sudoku\obj\Debug\Sudoku.Properties.Resources.resources
+c:\users\lixin\documents\visual studio 2015\Projects\Sudoku\obj\Debug\Sudoku.csproj.GenerateResource.Cache
+c:\users\lixin\documents\visual studio 2015\Projects\Sudoku\obj\Debug\Sudoku.exe
+c:\users\lixin\documents\visual studio 2015\Projects\Sudoku\obj\Debug\Sudoku.pdb
