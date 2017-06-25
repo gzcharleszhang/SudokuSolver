@@ -35,7 +35,7 @@ namespace Sudoku
                     {
                         return true;
                     }
-                    else if (val != 0)
+                    if (val != 0)
                     {
                         lib[val] = true;
                     }
@@ -44,9 +44,9 @@ namespace Sudoku
                     {
                         return true;
                     }
-                    else if (val2 != 0)
+                    if (val2 != 0)
                     {
-                        lib[val2] = true;
+                        lib2[val2] = true;
                     }
                 }
             }
@@ -80,7 +80,7 @@ namespace Sudoku
                     {
                         return true;
                     }
-                    else if (val != 0)
+                    if (val != 0)
                     {
                         lib[val] = true;
                     }
