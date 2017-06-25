@@ -10,6 +10,10 @@ namespace Sudoku
     class Grid
     {
         private int _value;
+        private SizeF _size;
+        private PointF _point;
+        private RectangleF _box;
+        private StateType _state;
 
         public int Value
         {
@@ -19,14 +23,13 @@ namespace Sudoku
             }
             set
             {
-                if (value >= 0 && value <= 9)
+                if (value > 0 && value <= 9)
                 {
                     _value = value;
                 }
             }
         }
-        private SizeF _size;
-
+        
         public SizeF Size
         {
             get
@@ -38,8 +41,7 @@ namespace Sudoku
                 _size = value;
             }
         }
-        private PointF _point;
-
+        
         public PointF Point
         {
             get
@@ -51,8 +53,7 @@ namespace Sudoku
                 _point = value;
             }
         }
-        private RectangleF _box;
-
+        
         public RectangleF Box
         {
             get
@@ -64,8 +65,7 @@ namespace Sudoku
                 _box = value;
             }
         }
-        private StateType _state;
-
+        
         public StateType State
         {
             get
@@ -78,7 +78,6 @@ namespace Sudoku
             }
         }
         
-
         public Grid(SizeF size, PointF point, StateType state)
         {
             _size = size;
