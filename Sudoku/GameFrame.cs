@@ -13,48 +13,50 @@ namespace Sudoku
 
         }
 
-        public bool CheckError(Grid[,] grids)
+        public bool IsError(Grid[,] grid)
         {
-            // 1 is taken, index is the value in the box
+            // True means the value is being used
+            // lib is for the current row; lib2 for the column
             bool[] lib;
             bool[] lib2;
             
-            // Check Horizontal
+            // Check conflicts in the row and column simultaneously
             for (int i = 0; i < 9; i++)
             {
                 lib = new bool[10];
                 lib2 = new bool[10];
+
                 for (int j = 0; j < 9; j++)
                 {
-                    int val = grids[i, j].Value;
-                    int val2 = grids[j, i].Value;
-                    if (lib[val])
+                    int val = grid[i, j].Value;
+                    int val2 = grid[j, i].Value;
+
+                    if (lib[val] || val == 0)
                     {
                         return true;
                     }
-                    else if (val != 0)
+                    if (val != 0)
                     {
                         lib[val] = true;
                     }
 
-                    if (lib2[val2])
+                    if (lib2[val2] || val2 == 0)
                     {
                         return true;
                     }
-                    else if (val2 != 0)
+                    if (val2 != 0)
                     {
-                        lib[val2] = true;
+                        lib2[val2] = true;
                     }
                 }
             }
             
-            // check sections
-            
+            // Check squares
             for (int i = 0; i < 3; i++)
             {
                 for (int j = 0; j < 3; j++)
                 {
-                    if (CheckSectionError(j * 3, i * 3, grids))
+                    if (IsError(j * 3, i * 3, grid))
                     {
                         return true;
                     } 
@@ -64,24 +66,27 @@ namespace Sudoku
             return false;
         }
 
-        public bool CheckSectionError(int x, int y, Grid[,] grids)
+        public bool IsError(int x, int y, Grid[,] grid)
         {
             bool[] lib = new bool[10];
+
             for (int i = 0; i < 3; i++)
             {
                 for (int j = 0; j < 3; j++)
                 {
-                    int val = grids[x + j, y + i].Value;
-                    if(lib[val])
+                    int val = grid[x + j, y + i].Value;
+
+                    if(lib[val] || val == 0)
                     {
                         return true;
                     }
-                    else if (val != 0)
+                    if (val != 0)
                     {
                         lib[val] = true;
                     }
                 }
             }
+
             return false;
         }
     }
